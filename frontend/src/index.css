@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+:root {
+    --brand: #0f766e;
+    --brand-2: #0ea5a4;
+    --ink: #0f172a;
+    --muted: #5b677a;
+    --paper: #f8fafc;
+    --sand: #f4efe6;
+    --line: #d7e4e3;
+}
+
+* {
+    font-family: Manrope, sans-serif;
+}
+
+body {
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 10% 8%, #e2f4f2 0%, transparent 28%),
+        radial-gradient(circle at 92% 18%, #fff0dc 0%, transparent 22%),
+        linear-gradient(180deg, #f7fbfb 0%, #fbfaf8 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Sora, sans-serif;
+}
+
+.surface {
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 22px;
+}
+
+.btn-solid {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-solid:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(15, 118, 110, 0.25);
+}
+
+.btn-ghost {
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.reveal-up {
+    animation: revealUp 520ms ease both;
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.active hr {
+    @apply block
+}
+@media (max-width:740px) {
+    .active  p{
+       @apply text-white bg-primary
+    }
+}
+::-webkit-scrollbar {
+    @apply hidden
+}
